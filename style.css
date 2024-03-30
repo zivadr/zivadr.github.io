@@ -1,0 +1,145 @@
+body, h1 {
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', serif;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-wrapper {
+    flex: 1;
+}
+
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Adjust this to 'space-between' for spacing or 'flex-start' to align left */
+    position: relative;
+	flex-wrap: wrap; /* This ensures responsiveness, allowing items to wrap if needed */
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.image-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+	position: relative;
+    text-align: center;
+	transition: transform 0.3s ease;
+}
+
+.image-item a:hover {
+    opacity: 0.5; /* Adds a subtle hover effect, adjust as needed */
+	transform: scale(1.1); /* Enlarge image on hover */
+    z-index: 10; /* Ensure the image is above others */
+    position: relative; /* Required for z-index to work */
+}
+
+.image-description {
+    margin-top: 8px; /* Adjust the space between the image and the text */
+    color: #000; /* Subtle text color, but choose what fits your design */
+    font-size: 1em; /* Smaller font size for descriptions */
+    /* Add any other styles you see fit */
+}
+
+@media (max-width: 600px) {
+    .image-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+.image-display {
+    text-align: center; /* Center the content */
+    padding: 20px;
+}
+
+nav {
+    text-align: center;
+    margin-bottom: 5px;
+	margin: 0 auto; /* Keeps nav centered in the header */
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0 5px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.content {
+    padding: 20px;
+    line-height: 1.6;
+}
+.logo {
+    height: 50px; /* Adjust the height as needed; width will be auto to maintain aspect ratio */
+    margin-right: 20px;
+    vertical-align: middle; /* This helps to align the logo vertically with the text if needed */
+	display: block;
+    margin: 0 auto 20px; /* Center the logo and add some margin below it */
+	padding-top: 20px;
+    height: 100px; /* Adjust the height as needed; width will be auto to maintain aspect ratio */
+}
+.logo-container {
+    display: block;
+    background-color: #fff; /* Your desired background color */
+    padding: 20px; /* Adjust this value to control the space around the logo */
+    text-align: center; /* Center the logo inside the container if it's smaller than the full width */
+    margin: 0 auto; /* Center the container if it's not full width */
+}
+
+.bottom-pattern {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 75px; /* Adjust based on the height of your pattern */
+    background-image: url('pattern.png');
+    background-repeat: repeat-x; /* Or 'no-repeat' if it should not repeat */
+    background-size: contain; /* Adjust as needed */
+    z-index: -1; /* Ensures it stays behind other content; adjust as necessary */
+}
+
+.language-switcher {
+    position: absolute;
+    right: 10px; /* Adjust based on your layout */
+    top: 50%; /* Align vertically */
+    transform: translateY(-50%); /* Center vertically */
+}
+
+.language-switcher a {
+    color: #fff; /* Replace 'blue' with any color or hexadecimal color code you prefer */
+    text-decoration: none; /* Optional: Removes the underline from the link */
+}
+
+.language-switcher a:hover, .language-switcher a:focus {
+    color: #fff; 
+    text-decoration: underline; /* Optional: Adds underline on hover/focus for visual feedback */
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #000; /* Or any color that fits your design */
+    width: 80%; /* Adjust this value to set the desired width */
+    margin: 10px auto; /* Centers the line and adds vertical margin */
+}
