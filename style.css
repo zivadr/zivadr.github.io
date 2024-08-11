@@ -10,6 +10,7 @@ html, body {
     margin: 0;
     background-color: #FFF8F7; /* Set the background color of the entire website */
     color: #23191B; /* Ensure text color contrasts with the background */
+    box-sizing: border-box; /* Ensure padding and borders are included in the element's total width and height */
 }
 
 body {
@@ -20,16 +21,19 @@ body {
 .content-wrapper {
     flex: 1;
     padding: 0 10%; /* Ensure consistent padding on the sides */
+    box-sizing: border-box; /* Include padding in the element's total width and height */
 }
 
 header {
     background-color: #FFF8F7;
     color: #23191B;
+	margin-top: 30px;
     padding: 20px 0;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-sizing: border-box; /* Include padding in the element's total width and height */
 }
 
 .nav-container {
@@ -178,14 +182,16 @@ header {
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     grid-gap: 20px; /* Gap between items */
     padding: 30px 0;
-	margin-bottom: 100px
+    margin-bottom: 100px;
+    box-sizing: border-box; /* Include padding in the element's total width and height */
 }
 
 .gallery-item {
     position: relative;
     overflow: visible;
     border-radius: 12px; /* Round the corners of the gallery item */
-	height: 350px; /* Fixed height for all items */
+    height: 350px; /* Fixed height for all items */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .gallery-item img {
@@ -204,11 +210,14 @@ header {
 .gallery-item:focus-within img {
     width: auto; /* Expand image beyond its container */
     height: auto; /* Expand image beyond its container */
-    max-width: 80%;
-    max-height: 120%;
-    transform: translate(-50%, -50%) scale(1.5); /* Adjust scale as needed */
+    max-width: 100%; /* Ensure the image doesn't exceed its container */
+    max-height: 100%; /* Ensure the image doesn't exceed its container */
+    transform: translate(-50%, -50%) scale(1.1); /* Adjust scale for a slight zoom effect */
     z-index: 10;
+    border-radius: 12px; /* Ensure border radius is maintained */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow for focus */
 }
+
 
 .pdf-container {
 	margin-top: 30px
@@ -219,13 +228,21 @@ footer {
 	text-align: center;
     position: relative;
 	padding-top: 50px; /* Adjust as needed */
+    box-sizing: border-box; /* Include padding in the element's total width and height */
 }
 
 .footer-divider {
-	position: absolute;
-    left: 20%;
+    position: relative;
+    width: 100%;
+    height: 30px;
+    overflow: hidden;
+}
+
+.footer-divider svg {
+    position: absolute;
+    left: 50%;
     transform: translateX(-50%);
-    width: 4000px; /* Fixed width */
+    width: 3000px; /* Fixed width to ensure it does not shrink */
     height: 30px;
 }
 
@@ -236,6 +253,7 @@ footer {
     padding: 50px; /* Add padding */
     position: relative;
     z-index: 1;
+    box-sizing: border-box; /* Ensure padding and borders are included in the element's total width and height */
 }
 
 .footer-links,
@@ -270,4 +288,30 @@ footer {
 
 .footer-logo-img {
     width: 50px; /* Adjust size as needed */
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 1000px) {
+    body {
+        font-size: 1.2em; /* Increase font size */
+    }
+
+    .nav-item, .nav-item-language {
+        font-size: 1.5em; /* Increase font size for navigation items */
+    }
+
+    .description-paragraph, .content-paragraph, .image-title, .image-description {
+        font-size: 1.4em; /* Increase font size for content paragraphs and image titles */
+    }
+
+    .footer-links p, .footer-links a {
+        font-size: 1.2em; /* Increase font size for footer links */
+    }
+	.image-grid {
+        grid-template-columns: 1fr; /* Force one image per row */
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr; /* Force one image per row */
+    }
 }
