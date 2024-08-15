@@ -130,6 +130,30 @@ header {
     margin: 10px 0;
 }
 
+.special-link {
+    text-decoration: none; /* Remove default underline */
+    color: #23191B; /* Change the link color */
+    font-weight: bold; /* Make the link bold */
+    transition: color 0.3s ease, border-bottom 0.3s ease; /* Smooth transition */
+    border-bottom: 2px solid transparent; /* Invisible bottom border for hover effect */
+}
+
+/* Hover effect */
+.special-link:hover {
+    color: #23191B; /* Change color on hover */
+    border-bottom: 2px solid #23191B; /* Underline on hover */
+}
+
+/* Active and visited state */
+.special-link:visited {
+    color: #23191B; /* Different color for visited links */
+}
+
+.special-link:active {
+    color: #23191B; /* Color when the link is clicked */
+    border-bottom: 2px solid #23191B;
+}
+
 .image-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -212,7 +236,7 @@ header {
     height: auto; /* Expand image beyond its container */
     max-width: 100%; /* Ensure the image doesn't exceed its container */
     max-height: 100%; /* Ensure the image doesn't exceed its container */
-    transform: translate(-50%, -50%) scale(1.1); /* Adjust scale for a slight zoom effect */
+    transform: translate(-50%, -50%) scale(1.3); /* Adjust scale for a slight zoom effect */
     z-index: 10;
     border-radius: 12px; /* Ensure border radius is maintained */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow for focus */
@@ -220,7 +244,9 @@ header {
 
 
 .pdf-container {
-	margin-top: 30px
+	margin-top: 10px;
+	display: block; /* Ensure the container is displayed */
+    visibility: visible; /* Ensure the container is visible */
 }	
 
 footer {
