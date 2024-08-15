@@ -236,7 +236,7 @@ header {
     height: auto; /* Expand image beyond its container */
     max-width: 100%; /* Ensure the image doesn't exceed its container */
     max-height: 100%; /* Ensure the image doesn't exceed its container */
-    transform: translate(-50%, -50%) scale(1.3); /* Adjust scale for a slight zoom effect */
+    transform: translate(-50%, -50%) scale(1.2); /* Adjust scale for a slight zoom effect */
     z-index: 10;
     border-radius: 12px; /* Ensure border radius is maintained */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow for focus */
