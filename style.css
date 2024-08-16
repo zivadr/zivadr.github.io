@@ -325,7 +325,7 @@ footer {
 }
 
 /* Media Query for Mobile Devices */
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
     body {
         font-size: 1.2em; /* Increase font size */
     }
@@ -347,8 +347,5 @@ footer {
 
     .gallery-grid {
         grid-template-columns: 1fr; /* Force one image per row */
-    }
-	.pdf-container iframe {
-        height: 400px; /* Adjust the height for smaller screens */
     }
 }
