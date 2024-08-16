@@ -325,7 +325,7 @@ footer {
 }
 
 /* Media Query for Mobile Devices */
-@media (max-width: 1200px) {
+@media screen and (max-width: 1200px) {
     body {
         font-size: 1.2em; /* Increase font size */
     }
